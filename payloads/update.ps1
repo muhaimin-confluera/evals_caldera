@@ -25,7 +25,7 @@ function update
             $output="C:\Users\Public\sandcat.exe"
             $wc.DownloadFile($url,$output)
         }
-        C:\Users\Public\sandcat.exe -server $server -group diy_eval
+        C:\Users\Public\sandcat.exe -server $server -group evals_caldera
         sleep -Seconds 60
     }
 }
